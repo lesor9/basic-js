@@ -7,5 +7,6 @@
 //require('./test/simple-chain.test');
 //require('./test/transform-array.test');
 
+require('./test/recursive-depth.test');
+
 //require('./test/vigenere-cipher.test');
-//require('./test/recursive-depth.test');
