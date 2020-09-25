@@ -1,9 +1,14 @@
 const CustomError = require("../extensions/custom-error");
 
 class VigenereCipheringMachine {
-
+	constructor(bool) {
+		if (bool == true || bool == undefined) {
+			this.typemachine = 'direct';
+		} else this.typemachine = 'reverse';
+	}
 
 	encrypt(string, key) {
+
 	  	let j = 0;
 	  	let keyLength = key.length;
 	  	let newKey = '';
@@ -37,6 +42,12 @@ class VigenereCipheringMachine {
 	  		} 
 	  		newStr += String.fromCharCode(finalKey);
 	  	}
+
+	  	if (this.typemachine == 'reverse') {
+	  		return newStr.split('').reverse().join('').toUpperCase();
+	  	}
+
+
 	  	return newStr.toUpperCase();
 }    
 	decrypt(encryptedMessage, key) {
@@ -82,6 +93,12 @@ class VigenereCipheringMachine {
 
 	  		newStr += String.fromCharCode(finalKey);
 	  	}
+
+	  	if (this.typemachine == 'reverse') {
+	  		return newStr.split('').reverse().join('').toUpperCase();
+	  	}
+
+
 	  	return newStr.toUpperCase();
 }
 
